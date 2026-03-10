@@ -132,7 +132,7 @@ const Contact = () => {
     let href = "#";
     if (item.name === "Phone") href = `tel:${item.value}`;
    if (item.name === "Email") href = `mailto:${item.value}`; // Mobile la email app
-    if (item.name === "Facebook") href = `https://${item.value}`;
+    if (item.name === "Facebook") href = item.value;
     if (item.name === "Location")
       href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.value)}`;
 
@@ -148,7 +148,6 @@ const Contact = () => {
           {item.icon}
         </div>
         <p className="text-gray-900 text-base font-semibold">{item.name}</p>
-        <p className="text-gray-400 text-sm text-center">{item.value}</p>
       </a>
     );
   })}
